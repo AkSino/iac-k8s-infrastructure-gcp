@@ -33,7 +33,8 @@ resource "google_compute_firewall" "internal" {
     protocol = "tcp"
   }
 
-  source_ranges = [var.private_subnet_cidr_block, "10.200.0.0/16", var.public_subnet_cidr_block]
+  #source_ranges = [var.private_subnet_cidr_block, "10.200.0.0/16", var.public_subnet_cidr_block]
+  source_ranges = ["0.0.0.0/0"]
 }
 
 resource "google_compute_firewall" "external" {
@@ -50,7 +51,7 @@ resource "google_compute_firewall" "external" {
 
   allow {
     protocol = "tcp"
-    ports    = ["22", "6443"]
+    ports    = ["22", "6443", "8080", "2379-2380", "10250", "10257", "10259", "30000-32767"]
   }
 
   source_ranges = ["0.0.0.0/0"]

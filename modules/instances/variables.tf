@@ -47,10 +47,10 @@ variable "include_pod_cidr" {
 }
 
 variable "gce_ssh_user" {
-  default = "root"
+  default = "ubuntu"
 }
 variable "gce_ssh_pub_key_file" {
-  default = "~/.ssh/google_compute_engine.pub"
+  default = "~/.ssh/google_compute_engine_ubuntu.pub"
 }
 variable "k8s_type_instance" {
   type = string

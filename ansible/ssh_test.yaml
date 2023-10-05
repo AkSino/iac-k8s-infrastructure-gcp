@@ -1,0 +1,9 @@
+---
+- name: Test SSH Connection
+  hosts: all
+  become: no
+  gather_facts: no
+
+  tasks:
+    - name: Ping hosts
+      ping:

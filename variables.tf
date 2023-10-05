@@ -25,3 +25,9 @@ variable "gcp_zone" {
   type        = string
   description = "GCP zone"
 }
+
+variable "ansible_ssh_private_key_file" {
+  type        = string
+  description = "SSH Private key file"
+  default     = "~/.ssh/google_compute_engine_ubuntu"
+}
